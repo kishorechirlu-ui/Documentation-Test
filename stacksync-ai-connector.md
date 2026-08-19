@@ -60,5 +60,5 @@ Replace each placeholder with your project's values. `<PATH_TO_METADATA_JSON>` m
 ### Questions to confirm with PM/Dev
 
 1. Is sync status monitoring actually available in the StackBuilder UI today, or is that feature still pending (Vasudha wasn't sure)?
-2. Where do sync/webhook logs live — is there a dashboard, a log aggregator, or do we need to file a ticket with DevOps per failure?
+2. Where do sync/webhook logs live - is there a dashboard, a log aggregator, or do we need to file a ticket with DevOps per failure?
 3. What causes a webhook-triggered sync to silently not fire ("not always" syncing) - is there a retry policy, and should users expect eventual consistency or manual re-triggering?
