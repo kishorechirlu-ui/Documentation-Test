@@ -50,3 +50,15 @@ cloud2code import \
 
 Replace each placeholder with your project's values. `<PATH_TO_METADATA_JSON>` must point to a `metadata.json` file that includes both `ai_index` and `clusters`, or the import will fail.
 
+### Assumptions made
+
+- The `customFields` frontmatter should be a nested object (`ai_index`, `audience`, `product_version` as its keys) - the stray "Shell" text in your spec looked like a copy-paste artifact rather than an intended field, so I dropped it. Flag if it was meant to be there.
+- Sync monitoring happens through the StackBuilder UI, since Vasudha said "I think" - not confirmed.
+- The exact `cloud2code` import/SDK syntax is invented for illustration; I don't have the real API surface.
+- The button rename is cosmetic only, with no accompanying behavior change.
+
+### Questions to confirm with PM/Dev
+
+1. Is sync status monitoring actually available in the StackBuilder UI today, or is that feature still pending (Vasudha wasn't sure)?
+2. Where do sync/webhook logs live — is there a dashboard, a log aggregator, or do we need to file a ticket with DevOps per failure?
+3. What causes a webhook-triggered sync to silently not fire ("not always" syncing) - is there a retry policy, and should users expect eventual consistency or manual re-triggering?
